@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>フォーム要素サンプル</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f0f0f0;
+      padding: 30px;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    .form-inline {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .form-check {
+      margin-bottom: 10px;
+    }
+    fieldset {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+    legend {
+      font-weight: bold;
+    }
+    button {
+      padding: 10px 20px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>入力フォームサンプル</h2>
+
+  <form action="#" method="post">
+
+    <div class="form-group">
+      <label for="text">テキスト (氏名など)</label>
+      <input type="text" id="text" name="text">
+    </div>
+
+    <div class="form-group">
+      <label for="email">メールアドレス</label>
+      <input type="email" id="email" name="email">
+    </div>
+
+    <div class="form-group">
+      <label for="password">パスワード</label>
+      <input type="password" id="password" name="password">
+    </div>
+
+    <div class="form-group">
+      <label for="tel">電話番号</label>
+      <input type="tel" id="tel" name="tel">
+    </div>
+
+    <div class="form-group">
+      <label for="url">WebサイトURL</label>
+      <input type="url" id="url" name="url">
+    </div>
+
+    <div class="form-group">
+      <label for="number">数値</label>
+      <input type="number" id="number" name="number" min="0" max="100">
+    </div>
+
+    <div class="form-group">
+      <label for="range">スライダー</label>
+      <input type="range" id="range" name="range" min="0" max="10">
+    </div>
+
+    <div class="form-group">
+      <label for="date">日付</label>
+      <input type="date" id="date" name="date">
+    </div>
+
+    <div class="form-group">
+      <label for="time">時間</label>
+      <input type="time" id="time" name="time">
+    </div>
+
+    <div class="form-group">
+      <label for="datetime">日付＋時間</label>
+      <input type="datetime-local" id="datetime" name="datetime">
+    </div>
+
+    <div class="form-group">
+      <label for="month">月</label>
+      <input type="month" id="month" name="month">
+    </div>
+
+    <div class="form-group">
+      <label for="week">週</label>
+      <input type="week" id="week" name="week">
+    </div>
+
+    <div class="form-group">
+      <label for="color">色の選択</label>
+      <input type="color" id="color" name="color">
+    </div>
+
+    <div class="form-group">
+      <label for="file">ファイルアップロード</label>
+      <input type="file" id="file" name="file" multiple>
+    </div>
+
+    <div class="form-group">
+      <label for="select">選択 (セレクトボックス)</label>
+      <select id="select" name="select">
+        <option value="">選択してください</option>
+        <option value="1">選択肢1</option>
+        <option value="2">選択肢2</option>
+      </select>
+    </div>
+
+    <fieldset>
+      <legend>ラジオボタン</legend>
+      <div class="form-check">
+        <label><input type="radio" name="radio" value="A"> 選択A</label>
+      </div>
+      <div class="form-check">
+        <label><input type="radio" name="radio" value="B"> 選択B</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>チェックボックス</legend>
+      <div class="form-check">
+        <label><input type="checkbox" name="check1"> チェック1</label>
+      </div>
+      <div class="form-check">
+        <label><input type="checkbox" name="check2"> チェック2</label>
+      </div>
+    </fieldset>
+
+    <div class="form-group">
+      <label for="textarea">お問い合わせ内容</label>
+      <textarea id="textarea" name="textarea" rows="4"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="hidden">隠しフィールド（非表示）</label>
+      <input type="hidden" id="hidden" name="hidden" value="hidden_value">
+    </div>
+
+    <div class="form-group">
+      <button type="submit">送信</button>
+      <button type="reset">リセット</button>
+    </div>
+
+  </form>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "ローカルフォーム保存拡張",
+  "version": "1.1",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png"
+    }
+  },
+  "permissions": ["storage", "tabs", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  }
+}

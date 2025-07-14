@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>フォーム保存拡張</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      width: 280px;
+      padding: 10px;
+    }
+
+    #itemList {
+      width: 100%;
+      margin-bottom: 8px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 6px;
+    }
+
+    .button-row button {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+  <h3>保存済みフォーム</h3>
+  <select id="itemList" size="6"></select>
+
+  <div class="button-row">
+    <button id="saveBtn">保存</button>
+    <button id="applyBtn">反映</button>
+    <button id="deleteBtn">削除</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
