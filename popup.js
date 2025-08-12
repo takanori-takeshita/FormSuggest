@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", updateList);
 
 saveBtn.addEventListener("click", async () => {
   const tab = (await chrome.tabs.query({ active: true, currentWindow: true }))[0];
-  if (!tab || !tab.id) return alert("タブ取得失敗");
+  if (!tab || !tab.id) return console.log("タブ取得失敗");
 
   const id = generateUniqueId();
 
@@ -94,26 +94,26 @@ saveBtn.addEventListener("click", async () => {
       await saveItemToIndexedDB(newEntry);
       chrome.storage.local.remove("tempFormData");
       updateList();
-      alert("保存しました: " + newEntry.title);
+      console.log("保存しました: " + newEntry.title);
     });
   }, 300);
 });
 
 applyBtn.addEventListener("click", async () => {
   const selectedId = itemList.value;
-  if (!selectedId) return alert("反映対象を選んでください");
+  if (!selectedId) return console.log("反映対象を選んでください");
 
   const items = await getAllItemsFromIndexedDB();
   const item = items.find(entry => entry.id === selectedId);
 
   if (!item) {
-    alert("選択されたデータが見つかりません");
+    console.log("選択されたデータが見つかりません");
     return;
   }
 
   const tab = (await chrome.tabs.query({ active: true, currentWindow: true }))[0];
   if (!tab || !tab.id) {
-    alert("タブが取得できませんでした");
+    console.log("タブが取得できませんでした");
     return;
   }
 
@@ -124,7 +124,7 @@ applyBtn.addEventListener("click", async () => {
     args: [item.form]
   });
 
-  alert("フォームに値を反映しました！");
+  console.log("フォームに値を反映しました！");
 });
 
 // 実行される関数本体（ページ側）
@@ -180,11 +180,11 @@ function injectFormValues(formData) {
 
 deleteBtn.addEventListener("click", async () => {
   const selectedId = itemList.value;
-  if (!selectedId) return alert("削除対象を選択してください");
+  if (!selectedId) return console.log("削除対象を選択してください");
 
   await deleteItemFromIndexedDB(selectedId);
   updateList();
-  alert("削除しました");
+  console.log("削除しました");
 });
 
 async function updateList() {
